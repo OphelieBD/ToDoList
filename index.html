@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<title>My to do list</title>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+	</head>
+
+	<body>
+		<h1>My to do list</h1>
+		<div class="container">
+			<div class="row"> <!-- Mise en place des titres des catégories -->
+				<h2 class="text-uppercase col-lg-6 col-sm-12">Travail</h2>
+				<h2 class="text-uppercase col-lg-6 col-sm-12">Privé</h2>
+			</div>
+			<div class="row"> <!-- Mise en place des contenants des catégories -->
+				<div class="col-lg-6 col-sm-12 categories" id="categorie1">
+					<ul id="listeCategorie1"></ul>
+				</div>
+				<div class="col-lg-6 col-sm-12 categories" id="categorie2">
+					<ul id="listeCategorie2"></ul>
+				</div>
+			</div>
+			<div class="row">
+				<form method="POST" action="controleur.php" id="form1"> <!-- Mise en place de l'input n°1 pour rajouter des tâches à la liste -->
+					<div>
+						<input type="text" name="tache" placeholder="nouvelle tâche" required data-validation-required-message="Veuillez entrer une nouvelle tâche" class="col-lg-4 col-sm-9"/>
+						<input type="hidden" name="action" value="insererDansTravail"/>
+						<button id="boutonValidation1" class="btn btn-primary btn-xl text-uppercase col-lg-2 col-sm-3" type="submit">Valider</button>
+					</div>
+				</form>
+				<form method="POST" action="controleur.php" id="form2"> <!-- Mise en place de l'input n°2 pour rajouter des tâches à la liste -->
+					<div>
+						<input type="text" name="tache" placeholder="nouvelle tâche" required data-validation-required-message="Veuillez entrer une nouvelle tâche" class="col-lg-4 col-sm-9"/>
+						<input type="hidden" name="action" value="insererDansPrive"/>
+						<button id="boutonValidation2" class="btn btn-primary btn-xl text-uppercase col-lg-2 col-sm-3" type="submit">Valider</button>
+					</div>
+				</form>
+			</div>
+			<div class="row">
+				<span class="col-lg-6" id="confirmationEnvoi1"></span>
+				<span class="col-lg-6" id="confirmationEnvoi2"></span>
+			</div>
+		</div>
+
+		<!-- Intégration des fichiers Bootstrap, JS & jQuery-->
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="todo.js"></script>
+	</body>
+</html>
