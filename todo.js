@@ -58,7 +58,7 @@ $("#form2").submit(function(e){ //Dès qu'on ajoute une tâche dans "privé", on
 });
 
 
-function afficherTaches(data) //affiche la liste des tâches déjà présentes en base de données
+function afficherTaches(data) //affiche la liste des tâches présentes en base de données
 {
 	var donneesRecues = JSON.parse(data);
 	$("#categorie1").empty();
@@ -66,18 +66,21 @@ function afficherTaches(data) //affiche la liste des tâches déjà présentes e
 	for (var i = 0; i < donneesRecues.length; i++) 
 	{
 		var taches = donneesRecues[i]['texte'];
+		var id = donneesRecues[i]['id'];
 		if (donneesRecues[i]['categorie'] == 'Travail') 
 		{
-			$('#categorie1').append('<li>'+ taches +'</li>');
+			$('#categorie1').append('<li>'+ taches +'&nbsp;&nbsp;<i onclick="suppressionLigne(' + id + ')" class="fa fa-times" aria-hidden="true"></i></li>');
 		}
 		else if (donneesRecues[i]['categorie'] == 'Prive') 
 		{
-			$('#categorie2').append('<li>'+ taches +'</li>');
+			$('#categorie2').append('<li>'+ taches +'&nbsp;&nbsp;<i onclick="suppressionLigne(' + id + ')" class="fa fa-times" aria-hidden="true"></i></li>');
 		}
 	}
+	$('#categorie1').append('<br/>');
+	$('#categorie2').append('<br/>');
 }
 
-function afficherDerniereTache(){
+function afficherDerniereTache(){ //fonction appelée dès lors qu'on ajoute une nouvelle tâche, elle l'envoie au php qui l'envoie à la BDD; En retour la BDD nous renvoie la liste
 	$.ajax({
         url: 'controleur.php',
         dataType: 'text',
@@ -86,4 +89,19 @@ function afficherDerniereTache(){
 		},
 		success: afficherTaches
     });
+}
+
+function suppressionLigne(idTacheActuelle){ //fonction permettant via l'appel ajax d'envoyer au php l'id de la ligne à supprimer
+	$.ajax({
+		url: 'controleur.php',
+		type: 'POST',
+		data: {
+			action: "supprimerTache",
+			idTache: idTacheActuelle
+		},
+		success: afficherDerniereTache,
+		error: function() {
+	        $("#confirmationEnvoi2").html("Erreur d'appel Ajax");
+	    }
+	});
 }

@@ -30,6 +30,13 @@
 					ajoutTacheDansPrive($_POST['tache']);
 				}
 			break;
+
+			case 'supprimerTache':
+				if (isset($_POST['idTache']))
+				{
+					suppressionTache($_POST['idTache']);
+				}
+			break;
 		}
 	}
 
@@ -55,6 +62,12 @@ function ajoutTacheDansPrive($tache) //Ajoute une tâche dans la catégorie "pri
 		array("tache"=>$tache, "categorie" => "Prive")
 	);
 	echo json_encode($envoiTacheCategorie2);
+}
+
+function suppressionTache($id) //Supprime une tâche de la BDD
+{
+	$supprimeTache = SQLEdit(
+		"DELETE FROM taches WHERE id = $id");
 }
 
 ?>
