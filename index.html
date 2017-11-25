@@ -28,16 +28,16 @@
 			<div class="row">
 				<form method="POST" action="controleur.php" id="form1"> <!-- Mise en place de l'input n°1 pour rajouter des tâches à la liste -->
 					<div>
-						<input type="text" name="tache" placeholder="nouvelle tâche" required data-validation-required-message="Veuillez entrer une nouvelle tâche" class="col-lg-4 col-sm-9"/>
+						<input type="text" name="tache" placeholder="nouvelle tâche" class="col-lg-4 col-sm-9" id="input1"/>
 						<input type="hidden" name="action" value="insererDansTravail"/>
-						<button id="boutonValidation1" class="btn btn-primary btn-xl text-uppercase col-lg-2 col-sm-3" type="submit">Valider</button>
+						<button id="boutonValidation1" class="btn btn-primary btn-xl text-uppercase col-lg-2 col-sm-3" type="submit" disabled="disabled">Valider</button>
 					</div>
 				</form>
 				<form method="POST" action="controleur.php" id="form2"> <!-- Mise en place de l'input n°2 pour rajouter des tâches à la liste -->
 					<div>
-						<input type="text" name="tache" placeholder="nouvelle tâche" required data-validation-required-message="Veuillez entrer une nouvelle tâche" class="col-lg-4 col-sm-9"/>
+						<input type="text" name="tache" placeholder="nouvelle tâche" class="col-lg-4 col-sm-9" id="input2"/>
 						<input type="hidden" name="action" value="insererDansPrive"/>
-						<button id="boutonValidation2" class="btn btn-primary btn-xl text-uppercase col-lg-2 col-sm-3" type="submit">Valider</button>
+						<button id="boutonValidation2" class="btn btn-primary btn-xl text-uppercase col-lg-2 col-sm-3" type="submit" disabled="disabled">Valider</button>
 					</div>
 				</form>
 			</div>
