@@ -3,8 +3,8 @@ body
 	margin: 0px;
 	padding: 0px;
 	background-image: url(img/wallpaper7.jpg);
-	background-position: fixed;
 	background-repeat: no-repeat;
+    background-attachment: fixed;
 	background-size: 100%;
 }
 
@@ -43,12 +43,12 @@ li:before
 	background-color: rgba(38,59,84,0.2);
 	padding-top: 20px;
 	padding-bottom: 20px;
-	width: 49%;
+	width: 98%;
 }
 
 #titreCategorie1, #titreCategorie2
 {
-	width: 49%;
+	width: 98%;
 	margin-bottom: 0px;
 	padding: 15px;
 }
@@ -56,11 +56,13 @@ li:before
 #categorie1, #titreCategorie1
 {
 	margin-right: 1%;
+	margin-left: 1%;
 }
 
 #categorie2, #titreCategorie2
 {
 	margin-left: 1%;
+	margin-right: 1%;
 }
 
 /*Animation titre*/
@@ -89,23 +91,6 @@ li:before
   line-height: 1em;
 }
 
-#form1, #form2
-{
-	padding: 0px;
-	margin-top: 20px;
-}
-
-#input1
-{
-	width: 98%;
-}
-
-#input2
-{
-	width: 98%;
-	margin-left: 12px;
-}
-
 .btn
 {
 	float: right;
@@ -114,8 +99,33 @@ li:before
 	border: none;
 }
 
-#boutonValidation1
+#form1, #form2
 {
-	margin-right: 12px;
+	padding: 0px;
+	margin-top: 10px;
+	width: 98%;
+	margin-left: 1%;
+	margin-right: 1%;
 }
 
+#input1, #input2
+{
+	margin: 0px;
+}
+
+@media all and (max-width: 768px)
+{
+	body
+	{	
+		background-repeat: repeat;
+    	background-attachment: fixed;
+	}
+
+	#categorieGauche, #categorieDroite
+	{
+		margin: auto;
+		padding-left: 20px;
+		padding-right: 20px;
+
+	}
+}

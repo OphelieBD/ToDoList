@@ -20,37 +20,51 @@
 		    </span>
 		</h1>
 		<div class="container">
-			<div class="row" id="containerTitres"> <!-- Mise en place des titres des catégories -->
-				<h2 class="text-uppercase col-lg-6 col-sm-12 col-xs-12" id="titreCategorie1">Travail</h2>
-				<h2 class="text-uppercase col-lg-6 col-sm-12 col-xs-12" id="titreCategorie2">Privé</h2>
-			</div>
-			<div class="row"> <!-- Mise en place des contenants des catégories -->
-				<div class="col-lg-6 col-sm-12 col-xs-12 categories" id="categorie1">
-					<ul id="listeCategorie1"></ul>
-				</div>
-				<div class="col-lg-6 col-sm-12 col-xs-12 categories" id="categorie2">
-					<ul id="listeCategorie2"></ul>
-				</div>
-			</div>
-			<div class="row" id="ensembleFormulaire">
-				<form method="POST" action="controleur.php" id="form1" class="col-lg-6 col-sm-12 col-xs-12"> <!-- Mise en place de l'input n°1 pour rajouter des tâches à la liste -->
-					<div id="divForm1">
-						<input type="text" name="tache" placeholder="nouvelle tâche" id="input1" class="form-control"/>
-						<input type="hidden" name="action" value="insererDansTravail"/>
-						<button id="boutonValidation1" class="btn btn-primary btn-xl text-uppercase" type="submit" disabled="disabled">Valider</button>
-					</div>
-				</form>
-				<form method="POST" action="controleur.php" id="form2" class="col-lg-6 col-sm-12 col-xs-12"> <!-- Mise en place de l'input n°2 pour rajouter des tâches à la liste -->
-					<div id="divForm2">
-						<input type="text" name="tache" placeholder="nouvelle tâche" id="input2" class="form-control"/>
-						<input type="hidden" name="action" value="insererDansPrive"/>
-						<button id="boutonValidation2" class="btn btn-primary btn-xl text-uppercase" type="submit" disabled="disabled">Valider</button>
-					</div>
-				</form>
-			</div>
 			<div class="row">
-				<span class="col-lg-6" id="confirmationEnvoi1"></span>
-				<span class="col-lg-6" id="confirmationEnvoi2"></span>
+				<div class="col-lg-6 col-sm-12 col-xs-12" id="categorieGauche"> <!-- Colonne de gauche, concernant la catégorie "travail" -->
+					<div class="row">
+						<h2 class="text-uppercase col-lg-12" id="titreCategorie1">Travail</h2> <!-- Mise en place du titre -->
+					</div>
+					<div class="row">
+						<div class="col-lg-12 categories" id="categorie1"> <!-- Mise en place de l'emplacement des tâches -->
+							<ul id="listeCategorie1"></ul>
+						</div>
+					</div>
+					<div class="row">
+						<form method="POST" action="controleur.php" id="form1" class="col-lg-12"> <!-- Mise en place du formulaire pour ajouter une tâche à la catégorie Travail-->
+							<div id="divForm1">
+								<input type="text" name="tache" placeholder="nouvelle tâche" id="input1" class="form-control"/>
+								<input type="hidden" name="action" value="insererDansTravail"/> <!-- Utile pour le JS -->
+								<button id="boutonValidation1" class="btn btn-primary btn-xl text-uppercase" type="submit" disabled="disabled">Valider</button>
+							</div>
+						</form>
+					</div>
+					<div class="row">
+						<span class="col-lg-6" id="confirmationEnvoi1"></span>
+					</div>
+				</div>
+				<div class="col-lg-6 col-sm-12 col-xs-12" id="categorieDroite"> <!-- Colonne de droite, concernant la catégorie "privé" -->
+					<div class="row">
+						<h2 class="text-uppercase col-lg-12" id="titreCategorie2">Privé</h2>
+					</div>
+					<div class="row">
+						<div class="col-lg-12 categories" id="categorie2">
+							<ul id="listeCategorie2"></ul>
+						</div>
+					</div>
+					<div class="row">
+						<form method="POST" action="controleur.php" id="form2" class="col-lg-12">
+							<div id="divForm2">
+								<input type="text" name="tache" placeholder="nouvelle tâche" id="input2" class="form-control"/>
+								<input type="hidden" name="action" value="insererDansPrive"/>
+								<button id="boutonValidation2" class="btn btn-primary btn-xl text-uppercase" type="submit" disabled="disabled">Valider</button>
+							</div>
+						</form>
+					</div>
+					<div class="row">
+						<span class="col-lg-6" id="confirmationEnvoi2"></span>
+					</div>
+				</div>
 			</div>
 		</div>
 
