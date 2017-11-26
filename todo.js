@@ -28,7 +28,8 @@ $("#form1").submit(function(e){ //Dès qu'on ajoute une tâche dans "travail", o
 	    dataType: 'json',
 	    data: dato,
 	    success : function() {
-	        $("#confirmationEnvoi1").html("Bien enregistré"); // message de validation 
+	        $("#confirmationEnvoi1").html("Bien enregistré"); // message de validation
+	        $("#confirmationEnvoi1").delay(3000).fadeOut(1000, 'linear'); 
 	        afficherDerniereTache(); // rajoute la dernière tache à la liste affichée
 	    },
 	    error: function() {
@@ -49,6 +50,7 @@ $("#form2").submit(function(e){ //Dès qu'on ajoute une tâche dans "privé", on
 	    data: dato,
 	    success : function() {
 	        $("#confirmationEnvoi2").html("Bien enregistré");
+	        $("#confirmationEnvoi2").delay(3000).fadeOut(1000, 'linear');
 	        afficherDerniereTache();
 	    },
 	    error: function() {
@@ -76,8 +78,6 @@ function afficherTaches(data) //affiche la liste des tâches présentes en base 
 			$('#categorie2').append('<li>'+ taches +'&nbsp;&nbsp;<i onclick="suppressionLigne(' + id + ')" class="fa fa-times" aria-hidden="true"></i></li>');
 		}
 	}
-	$('#categorie1').append('<br/>');
-	$('#categorie2').append('<br/>');
 }
 
 function afficherDerniereTache(){ //fonction appelée dès lors qu'on ajoute une nouvelle tâche, elle l'envoie au php qui l'envoie à la BDD; En retour la BDD nous renvoie la liste
@@ -105,3 +105,25 @@ function suppressionLigne(idTacheActuelle){ //fonction permettant via l'appel aj
 	    }
 	});
 }
+
+// Wrap every letter in a span
+$('.ml9 .letters').each(function(){
+  $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+});
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml9 .letter',
+    scale: [0, 1],
+    duration: 1500,
+    elasticity: 600,
+    delay: function(el, i) {
+      return 45 * (i+1)
+    }
+  }).add({
+    targets: '.ml9',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });

@@ -1,0 +1,121 @@
+body
+{
+	margin: 0px;
+	padding: 0px;
+	background-image: url(img/wallpaper7.jpg);
+	background-position: fixed;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+h2
+{
+	font-family: 'Bubbler One';
+	font-size: 2.8em;
+	color: #172B41;
+	background-color: rgba(38,59,84,0.6);
+	text-shadow: 2px 2px #55616E;
+	font-weight: bold;
+}
+
+li
+{
+	font-family: 'Bubbler One';
+	font-size: 1.2em;
+	list-style-type: none;
+	font-weight: bold;
+}
+
+li:hover
+{
+	font-style: italic;
+	color: #9A5866;
+}
+
+li:before
+{
+	content: "→ "; /* caractère UTF-8 */
+	font-weight: bold;
+}
+
+.categories
+{
+	background-color: rgba(38,59,84,0.2);
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 49%;
+}
+
+#titreCategorie1, #titreCategorie2
+{
+	width: 49%;
+	margin-bottom: 0px;
+	padding: 15px;
+}
+
+#categorie1, #titreCategorie1
+{
+	margin-right: 1%;
+}
+
+#categorie2, #titreCategorie2
+{
+	margin-left: 1%;
+}
+
+/*Animation titre*/
+.ml9 {
+  position: relative;
+  font-family: 'Amatic SC';
+  text-align: center;
+  font-size: 3.8em;
+  font-weight: bold;
+  text-decoration: underline;
+  margin: 30px;
+}
+
+.ml9 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml9 .letter {
+  transform-origin: 50% 100%;
+  display: inline-block;
+  line-height: 1em;
+}
+
+#form1, #form2
+{
+	padding: 0px;
+	margin-top: 20px;
+}
+
+#input1
+{
+	width: 98%;
+}
+
+#input2
+{
+	width: 98%;
+	margin-left: 12px;
+}
+
+.btn
+{
+	float: right;
+	margin-top: 5px;
+	background-color: #273144;
+	border: none;
+}
+
+#boutonValidation1
+{
+	margin-right: 12px;
+}
+
